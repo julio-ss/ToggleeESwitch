@@ -53,6 +53,13 @@
         android:onClick="enviar"
         android:text="ENVIAR" />
 
+    <Button
+        android:id="@+id/btnToast"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="abrirToast"
+        android:text="Toast" />
+
     <TextView
         android:id="@+id/textResultado"
         android:layout_width="match_parent"

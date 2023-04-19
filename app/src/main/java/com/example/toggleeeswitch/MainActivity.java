@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CompoundButton;
+import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ToggleButton;
 
 public class MainActivity extends AppCompatActivity {
@@ -26,6 +28,30 @@ public class MainActivity extends AppCompatActivity {
 
         adicionarListener();
 
+    }
+
+    public void abrirToast(View v){
+
+        ImageView imagem = new ImageView(getApplicationContext());
+        imagem.setImageResource(android.R.drawable.btn_radio);
+
+        TextView textRet = new TextView(getApplicationContext());
+        textRet.setBackgroundResource(com.google.android.material.R.color.material_dynamic_primary40);
+        textRet.setText("Ola mundo!");
+
+        Toast toast = new Toast(getApplicationContext());
+        toast.setDuration(Toast.LENGTH_LONG);
+        toast.setView(imagem);
+        //toast.setView(textRet);
+        toast.show();
+
+
+
+        /*Toast.makeText(
+                getApplicationContext(),
+                "Acao realizada com sucesso!",
+                Toast.LENGTH_LONG
+        ).show();*/
     }
 
     public void adicionarListener(){
