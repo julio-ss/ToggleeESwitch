@@ -19,6 +19,16 @@
         android:textStyle="bold" />
 
     <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFEB3B"
+        android:text="Switch - Toggle - AlertDialog"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textStyle="bold" />
+
+    <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -69,12 +79,30 @@
         android:onClick="abrirDialog"
         android:text="ALERT DIALOG" />
 
+    <TextView
+        android:id="@+id/textResultado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Resultado"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="#FFEB3B"
+        android:text="ProgressBar"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textStyle="bold" />
+
     <ProgressBar
         android:id="@+id/progressBarHorizontal"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:max="10" />
 
     <ProgressBar
@@ -91,11 +119,40 @@
         android:text="CARREGAR" />
 
     <TextView
-        android:id="@+id/textResultado"
+        android:id="@+id/textView7"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:text="O quao divertido voce e?"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="em uma escala de 0 a 10"
+        android:textSize="16sp" />
+
+    <SeekBar
+        android:id="@+id/seekBarEscala"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="10" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="recuperarProgresso"
+        android:text="RECUPERAR PROGRESSO" />
+
+    <TextView
+        android:id="@+id/textEscala"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="Resultado"
         android:textSize="20sp"
         android:textStyle="bold" />
+
 </LinearLayout>

@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.SeekBar;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,10 +24,17 @@ public class MainActivity extends AppCompatActivity {
     private ProgressBar progressBarHorizontal, progressBarCircular;
     private int progresso = 0;
 
+    private SeekBar seekBarEscala;
+    private TextView textEscala;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        seekBarEscala = findViewById(R.id.seekBarEscala);
+        textEscala = findViewById(R.id.textEscala);
+        listenerSeekBar();
 
         progressBarHorizontal = findViewById(R.id.progressBarHorizontal);
         progressBarCircular = findViewById(R.id.progressBarCircular);
@@ -38,6 +46,30 @@ public class MainActivity extends AppCompatActivity {
 
         adicionarListener();
 
+    }
+
+    public void listenerSeekBar(){
+
+        seekBarEscala.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                textEscala.setText("Progresso: " + progress + " / " + seekBar.getMax());
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+                //textEscala.setText("Status: onStartTrackingTouch");
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                //textEscala.setText("Status: onStopTrackingTouch");
+            }
+        });
+    }
+
+    public void recuperarProgresso(View v){
+        textEscala.setText("Escolhido: " + seekBarEscala.getProgress());
     }
 
     public void carregarProgressBar(View v){
