@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,16 +20,37 @@ public class MainActivity extends AppCompatActivity {
     private Switch switchSenha;
     private TextView textView;
 
+    private ProgressBar progressBarHorizontal, progressBarCircular;
+    private int progresso = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        progressBarHorizontal = findViewById(R.id.progressBarHorizontal);
+        progressBarCircular = findViewById(R.id.progressBarCircular);
+        progressBarCircular.setVisibility(View.GONE);
 
         toggleSenha = findViewById(R.id.toggleSenha);
         switchSenha = findViewById(R.id.switchSenha);
         textView = findViewById(R.id.textResultado);
 
         adicionarListener();
+
+    }
+
+    public void carregarProgressBar(View v){
+
+        //progressBar horizontal
+        this.progresso = this.progresso + 1;
+        progressBarHorizontal.setProgress(progresso);
+
+        //progressBar circular
+        progressBarCircular.setVisibility(View.VISIBLE);
+        if(this.progresso == 10){
+            progressBarCircular.setVisibility(View.GONE);
+        }
 
     }
 
