@@ -58,7 +58,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="abrirToast"
-        android:text="Toast" />
+        android:text="TOAST" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="abrirDialog"
+        android:text="ALERT DIALOG" />
 
     <TextView
         android:id="@+id/textResultado"

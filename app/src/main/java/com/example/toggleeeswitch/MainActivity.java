@@ -1,7 +1,9 @@
 package com.example.toggleeeswitch;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CompoundButton;
@@ -28,6 +30,40 @@ public class MainActivity extends AppCompatActivity {
 
         adicionarListener();
 
+    }
+
+    public void abrirDialog(View v){
+        //instanciar AlertDialog
+        AlertDialog .Builder dialog = new AlertDialog.Builder(this);
+
+        //configurar titulo e mensagem
+        dialog.setTitle("Titulo da dialog");
+        dialog.setMessage("Mensagem da dialog");
+
+        //configurar cancelamento
+        dialog.setCancelable(false);
+
+        //configurar icone
+        dialog.setIcon(android.R.drawable.btn_star_big_on);
+
+        //configurar acoes de sim e nao
+        dialog.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(getApplicationContext(), "Executar acao ao clicar no botao sim", Toast.LENGTH_LONG).show();
+            }
+        });
+
+        dialog.setNegativeButton("Nao", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(getApplicationContext(), "Execeutar acao ao clicar no botao nao", Toast.LENGTH_LONG).show();
+            }
+        });
+
+        //criar e exibir AlertDialog
+        dialog.create();
+        dialog.show();
     }
 
     public void abrirToast(View v){
